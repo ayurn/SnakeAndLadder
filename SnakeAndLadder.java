@@ -8,16 +8,17 @@ public class SnakeAndLadder
 	public static final int Snake=3;
 	public static final int Win_position=100;
 	public static final int Position_check = 0;
-
+	
 	public static void main(String[] args) 
 	{
 		System.out.println("Welcome to SnakeAndLadder program");
-
+		int noOfDieRoll = 0;
 		int position=0;
 		System.out.println("Start position of player :	"+position);
 
-		//Rolling dice to get random number
-		
+		while (position < Win_position){
+
+		//Rolling dice to get random number	
 		Random random = new Random();
 	    int droll = 0;
 		while (true)
@@ -28,8 +29,9 @@ public class SnakeAndLadder
 		System.out.println("Number of dice : "+droll);
 
 		//options
-		while (position < Win_position){
+
 		Random ran = new Random();
+		noOfDieRoll++;
 	    int option = 0;
 		while (true)
 		{
@@ -38,7 +40,7 @@ public class SnakeAndLadder
 		}
 		System.out.println("====OPTIONS======\nOption 1 : No Play\nOption 2 : Ladder \nOption 3 : Snake \n");
 		System.out.println("Option : "+option);
-		
+		//Switch statement
 		switch (option) {
 			case No_Play:
 				System.out.println("Player stays in the same position : "+position);
@@ -66,6 +68,7 @@ public class SnakeAndLadder
 				break;
 			}
 		}
+		System.out.println("Number Of Times The Dice Was Played To Win The Game Is : " +noOfDieRoll);
 	}
 
 }
